@@ -157,7 +157,8 @@ server <- function(input, output, session) {
   })  
   
   observeEvent(input$action, {
-    file_df <- read.table(text = input$file1, sep = ",", header = FALSE, fileEncoding = "UTF-8")
+    file_df <- read.table(text = gsub(" ","",input$file1), sep = ",", header = FALSE, fileEncoding = "UTF-8")
+    
     colnames(file_df) <- c("pdb_title", "lig1n", "lig1id")
     file_df <- data.frame(lapply(file_df, function(v) {
       if (is.character(v)) {
@@ -172,7 +173,7 @@ server <- function(input, output, session) {
   })
 
   observeEvent(input$upcsv, {
-    file_csv <- read.table(file = input$filecsv$datapath, sep = ",", header = TRUE, fileEncoding = "UTF-8")
+    file_csv <- read.table(file = gsub(" ","",input$filecsv$datapath), sep = ",", header = TRUE, fileEncoding = "UTF-8")
     colnames(file_csv) <- c("pdb_title", "lig1n", "lig1id")
     file_csv <- data.frame(lapply(file_csv, function(v) {
       if (is.character(v)) {
@@ -202,9 +203,6 @@ server <- function(input, output, session) {
     })
   })
   
-#---------------------- detalhes a se resolver:
-
-  # como publicar serv html
 
 }
 
