@@ -10,6 +10,12 @@
 # My github: https://github.com/WelingtonSilvaDev
 
 # RECOMENDA-SE que o zoom (ctrl +) do browser seja de 125% 
+install.packages("pacman") # pacman package install libraries if they are not installed yet
+pacman::p_load(c("flexclust", "tidyverse", "doMC", "bio3d", "Rpdb","rmarkdown", "pracma","geometry",
+                 "deldir", "caret", "graphkernels", "shape", "rARPACK", "mongolite", "tnet", 
+                "markdown", "DT", "shiny", "shinythemes", "shinycssloaders", "dplyr","r3dmol",
+                "plotly","bslib")) #list of libraries used
+
 source("main-ligs.R")
 source("show3d/3dmol.R")
 
