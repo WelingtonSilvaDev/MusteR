@@ -2055,7 +2055,7 @@ get_hot_score = function(hot,tam){
 
 plot_super = function(exp,n,mfrow,col=NULL,trans=1,title="1o"){
 
-  browser()
+  #browser()
   
 	clus=c()
 	par(mfrow = mfrow)

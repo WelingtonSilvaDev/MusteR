@@ -6,15 +6,23 @@
 #   | |  | | |_| \__ \ ||  __/ | \ \ 
 #   |_|  |_|\__,_|___/\__\___|_|  \_\
 # Created by Welington Goncalves Silva
-# Last update on november 23, 2022
+# Last update on march 15, 2023
 # My github: https://github.com/WelingtonSilvaDev
 
 # RECOMENDA-SE que o zoom (ctrl +) do browser seja de 125% 
-install.packages("pacman") # pacman package install libraries if they are not installed yet
-pacman::p_load(c("flexclust", "tidyverse", "doMC", "bio3d", "Rpdb","rmarkdown", "pracma","geometry",
-                 "deldir", "caret", "graphkernels", "shape", "rARPACK", "mongolite", "tnet", 
-                "markdown", "DT", "shiny", "shinythemes", "shinycssloaders", "dplyr","r3dmol",
-                "plotly","bslib")) #list of libraries used
+
+# Lista de pacotes necessários
+pacotes <- c("flexclust", "doMC", "bio3d", "Rpdb","rmarkdown", "pracma","geometry",
+                  "deldir", "caret", "graphkernels", "shape", "rARPACK", "mongolite", "tnet",
+                  "markdown", "DT", "shiny", "shinythemes", "shinycssloaders", "dplyr","r3dmol",
+                  "plotly","bslib", "ragg", "systemfonts", "textshaping")
+# Verificar se cada pacote está instalado e instalá-lo se necessário
+for (pacote in pacotes) {
+  if (!require(pacote, character.only = TRUE)) {
+    install.packages(pacote, repos = "https://cran.rstudio.com/", dependencies=TRUE)
+  }
+}
+
 
 source("main-ligs.R")
 source("show3d/3dmol.R")
