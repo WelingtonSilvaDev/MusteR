@@ -1,0 +1,13 @@
+name: MusteR-master
+title: MusteR-master
+username:
+account: muster
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7952342
+bundleId: 7020722
+url: https://muster.shinyapps.io/MusteR-master/
+when: 1680043095.74375
+lastSyncTime: 1680043095.74378
+asMultiple: FALSE
+asStatic: FALSE
