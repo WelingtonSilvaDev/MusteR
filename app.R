@@ -22,6 +22,9 @@ for (pacote in pacotes) {
     install.packages(pacote, repos = "https://cran.rstudio.com/", dependencies=TRUE)
   }
 }
+ if (!require("Rpdb", character.only = TRUE)) {
+   install.packages(pacote, repos = "https://cran.r-project.org/src/contrib/Archive/Rpdb/Rpdb_2.3.tar.gz", dependencies=TRUE)
+ }
 
 
 source("main/main-ligs.R")

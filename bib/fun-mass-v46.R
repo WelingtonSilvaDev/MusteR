@@ -263,7 +263,8 @@ make_it_mass_pdb_reading = function(pdbname,dirpathin,prefix="",sufix=".pdb",fil
 	#browser()
 	if (file.exists(auxfile)){
 		#auxpdb = read.pdb(auxfile,ATOM.only=TRUE)
-		auxpdb = read.pdb(auxfile,maxlines = maxlines, multi = multi, rm.insert = rm.insert, rm.alt = rm.alt, ATOM.only = ATOM.only, verbose = verbose)
+	  library(bio3d)
+		auxpdb = bio3d::read.pdb(auxfile,maxlines = maxlines, multi = multi, rm.insert = rm.insert, rm.alt = rm.alt, ATOM.only = ATOM.only, verbose = verbose)
 		tampdb = dim(auxpdb$atom)[1]
 		if (tampdb>nmax.atom){
 			aux = list()
